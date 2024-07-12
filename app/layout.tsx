@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Mooli } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import PageTransition from "@/components/page-transition";
@@ -10,6 +10,8 @@ const jetBrains_Mono = JetBrains_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jetbrainsMono",
 });
+
+const mooli = Mooli({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Dalasa's Portfolio",
@@ -24,9 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={jetBrains_Mono.variable}>
+      <body className={`${jetBrains_Mono.variable} ${mooli.className}`}>
         <Header />
-        <StairTransition/>
+        <StairTransition />
         <PageTransition>{children}</PageTransition>
       </body>
     </html>
