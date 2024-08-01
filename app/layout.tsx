@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import PageTransition from "@/components/page-transition";
 import StairTransition from "@/components/stair-transition";
+import CustomCursor from "@/components/custom-cursor";
 
 const jetBrains_Mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -26,7 +27,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetBrains_Mono.variable} ${mooli.className}`}>
+      <body className={`${jetBrains_Mono.variable}`}>
+      {/* <CustomCursor /> */}
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>

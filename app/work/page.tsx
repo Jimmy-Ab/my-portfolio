@@ -105,8 +105,8 @@ const projects = [
       { name: "MUI" },
       { name: "C#" },
     ],
-    image: "/assets/work/thumb3.png",
-    live: "",
+    image: "/assets/work/better-mtd.png",
+    live: "https://www.better.mobi/product#mtd",
     github: "",
   },
 ];
@@ -139,7 +139,7 @@ const Work = () => {
               </div>
               {/*Project category*/}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {project.title}
               </h2>
               {/*Project description*/}
               <p className="text-white/60">{project.description}</p>
@@ -202,7 +202,7 @@ const Work = () => {
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover  w-full h-full group-hover:opacity-75 rounded-xl"
+                          className="object-fill  w-full h-full group-hover:opacity-75 rounded-xl"
                         />
                       </div>
                     </div>

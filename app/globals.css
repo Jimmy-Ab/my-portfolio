@@ -10,9 +10,9 @@
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
   }
-   .h2 {
+  .h2 {
     @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
-  } 
+  }
   .h3 {
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
@@ -20,10 +20,19 @@
   .text-outline {
     -webkit-text-stroke: 1px #ffffff;
   }
-  
+
   .text-outline-hover {
     -webkit-text-stroke: 1px #00ff99;
-  
+  }
+
+
+  .custom-cursor {
+    @apply fixed z-50 pointer-events-none bg-slate-200 w-6 h-6 rounded-full transition-transform duration-200 ease-in-out mix-blend-difference;
+  }
+
+  .custom-cursor.large {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(75, 85, 99, 0.2); /* more prominent when large */
   }
 }
-
