@@ -9,11 +9,11 @@ import {
 } from "react-icons/fa";
 
 const socials = [
-  { icon: <FaGithub />, path: "" },
-  { icon: <FaLinkedinIn />, path: "" },
-  { icon: <FaTwitter />, path: "" },
-  { icon: <FaInstagram />, path: "" },
-  { icon: <FaTelegram />, path: "" },
+  { icon: <FaGithub />, path: "https://github.com/Jimmy-Ab?tab=repositories" },
+  { icon: <FaLinkedinIn />, path: "https://www.linkedin.com/in/dalasa-aboma-415344111/" },
+  { icon: <FaTwitter />, path: "https://x.com/DalasaAboma" },
+  { icon: <FaInstagram />, path: "https://www.instagram.com/jimmy___ab/" },
+  { icon: <FaTelegram />, path: "https://t.me/jimmy1978" },
 ];
 const Socials = () => {
   return (

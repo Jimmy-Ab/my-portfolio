@@ -14,19 +14,19 @@ const services = [
   {
     num: "02",
     title: "UI/UX Design",
-    description: "I provide expert services in designing elegant web experiences, utilizing my extensive knowledge in cutting-edge web development tools and techniques.",
+    description: "I design intuitive and engaging user interfaces that focus on usability and aesthetics, making sure your website or app is both functional and visually appealing.",
     href: "",
   },
   {
     num: "03",
     title: "Logo Design",
-    description: "I provide expert services in designing elegant web experiences, utilizing my extensive knowledge in cutting-edge web development tools and techniques.",
+    description: "I provide logo design services that focus on developing impactful and unique logos that capture the core values of your brand. I craft designs that are both aesthetically pleasing and meaningful.",
     href: "",
   },
   {
     num: "04",
     title: "SEO",
-    description: "I provide expert services in designing elegant web experiences, utilizing my extensive knowledge in cutting-edge web development tools and techniques.",
+    description: "I offer SEO solutions that enhance your website’s performance, ensuring higher rankings and increased engagement from potential customers.",
     href: "",
   },
 ];

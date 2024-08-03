@@ -49,10 +49,7 @@ const Contact = () => {
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
               <p className="text-white/60 ">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Maxime, atque ab? Incidunt provident culpa corrupti minima
-                quaerat quidem, quam et velit quas excepturi, ad dolorem
-                inventore voluptatibus? Eveniet, enim aut!
+              I&apos;m always eager to collaborate with like-minded individuals and organizations on innovative projects. With over five years of software development experience, I bring a mix of technical skills and creative thinking to every project. Whether you have a unique idea or need technical expertise, feel free to reach out, and let’s bring your vision to life together!
               </p>
 
               {/*inputs*/}
