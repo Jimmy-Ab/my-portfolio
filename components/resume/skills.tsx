@@ -12,7 +12,7 @@ import {
   SiTailwindcss,
   SiNextdotjs,
   SiTypescript,
-  SiMaterialdesign,
+   SiMui,
   SiAntdesign,
   SiDotnet,
 } from "react-icons/si";
@@ -65,8 +65,8 @@ const skills = {
       name: "Tailwind CSS",
     },
     {
-      icon: <SiMaterialdesign />,
-      name: "Material Design",
+      icon: <SiMui />,
+      name: "Material UI Design",
     },
     {
       icon: <SiAntdesign />,
