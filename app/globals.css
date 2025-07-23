@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-primary font-primary text-white leading-loose;
+    @apply bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] font-primary text-white leading-loose;
   }
 
   .h1 {
@@ -25,7 +25,6 @@
     -webkit-text-stroke: 1px #00ff99;
   }
 
-
   .custom-cursor {
     @apply fixed z-50 pointer-events-none bg-slate-200 w-6 h-6 rounded-full transition-transform duration-200 ease-in-out mix-blend-difference;
   }
@@ -35,4 +34,95 @@
     height: 60px;
     background-color: rgba(75, 85, 99, 0.2); /* more prominent when large */
   }
+
+  /* Add to your globals.css */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes float-delay {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(15px);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-delay {
+    animation: float-delay 10s ease-in-out infinite 2s;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+
+  /* Add to globals.css */
+  header {
+    transition: background-color 0.3s ease;
+  }
+
+  header.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animation for mobile menu button */
+  .hamburger-line {
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Add to globals.css */
+.service-card {
+  backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
+  transform: translateY(-5px);
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+  text-stroke: 1px rgba(255,255,255,0.1);
+}
+
+.text-outline-hover {
+  -webkit-text-stroke: 1px rgba(79, 70, 229, 0.2);
+  text-stroke: 1px rgba(79, 70, 229, 0.2);
+}
 }

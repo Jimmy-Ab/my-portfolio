@@ -1,15 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
@@ -116,103 +110,134 @@ const Work = () => {
 
   const handleSlideChange = (swiper: any) => {
     const currentIndex = swiper.activeIndex;
-
     setProject(projects[currentIndex]);
   };
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-      }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="relative py-16 xl:py-24 overflow-hidden"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px]  flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/*Outline number*/}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+      {/* Background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e]"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-[#4f46e5]/10 blur-3xl animate-float-delay"></div>
+      </div>
+
+      <div className="container mx-auto px-6">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="text-accent">Projects</span>
+          </h2>
+          <p className="text-white/70 max-w-2xl mx-auto">
+            A selection of my professional work and contributions
+          </p>
+        </motion.div>
+
+        <div className="flex flex-col xl:flex-row gap-12">
+          {/* Project info */}
+          <motion.div
+            className="w-full xl:w-[45%] flex flex-col justify-between"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex flex-col gap-8">
+              <div className="text-8xl font-extrabold text-outline text-transparent">
                 {project.num}
               </div>
-              {/*Project category*/}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.title}
-              </h2>
-              {/*Project description*/}
-              <p className="text-white/60">{project.description}</p>
-              {/*Stack*/}
-              <ul className="flex gap-4">
+
+              <div className="space-y-6">
+                <h3 className="text-4xl font-bold text-white">
+                  {project.title}
+                </h3>
+                <p className="text-lg text-white/70 leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
                 {project.stack.map((tech, index) => (
-                  <li
+                  <span
                     key={index}
-                    className="text-accent text-xs bg-slate-800 mt-6 xl:mt-0 rounded-xl py-2 px-3"
+                    className="text-sm bg-white/5 rounded-full px-4 py-2 text-accent border border-white/10"
                   >
                     {tech.name}
-                  </li>
+                  </span>
                 ))}
-              </ul>
-              {/*Border*/}
-              <div className="border border-white/20"></div>
-              {/*Buttons*/}
-              <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live Project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+              </div>
+
+              <div className="border-t border-white/20 pt-6 flex gap-6">
+                {project.live && (
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    className="flex items-center gap-2 text-white hover:text-accent transition-colors"
+                  >
+                    <BsArrowUpRight className="text-xl" />
+                    <span>Live Demo</span>
+                  </Link>
+                )}
+                {project.github && (
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    className="flex items-center gap-2 text-white hover:text-accent transition-colors"
+                  >
+                    <BsGithub className="text-xl" />
+                    <span>View Code</span>
+                  </Link>
+                )}
               </div>
             </div>
-          </div>
-          <div className="w-full xl:w-[50%] rounded-xl">
+          </motion.div>
+
+          {/* Project slider */}
+          <motion.div
+            className="w-full xl:w-[55%]"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              className="xl:h-[520px] rounded-2xl overflow-hidden"
               onSlideChange={handleSlideChange}
             >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group  flex justify-center items-center bg-pink-50/20">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      <div className="relative w-full h-full rounded-xl">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-fill  w-full h-full group-hover:opacity-75 rounded-xl"
-                        />
-                      </div>
+              {projects.map((project, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative h-[400px] xl:h-[500px] group">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 p-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <h4 className="text-2xl font-bold text-white mb-2">
+                        {project.title}
+                      </h4>
+                      <p className="text-white/80">{project.category}</p>
                     </div>
-                  </SwiperSlide>
-                );
-              })}
-
+                  </div>
+                </SwiperSlide>
+              ))}
               <WorkSliderBtns />
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>
