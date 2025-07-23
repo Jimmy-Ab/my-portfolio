@@ -115,7 +115,7 @@ const Contact = () => {
             Get In <span className="text-accent">Touch</span>
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Let's discuss how I can help bring your project to life
+            Let&rsquo;s discuss how I can help bring your project to life
           </p>
         </motion.div>
 

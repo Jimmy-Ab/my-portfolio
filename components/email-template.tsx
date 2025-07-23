@@ -46,7 +46,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         margin: '8px 0 0',
         opacity: 0.9,
         fontSize: '16px'
-      }}>You've received a new work request</p>
+      }}>You&rsquo;ve received a new work request</p>
     </div>
 
     {/* Main Content */}
@@ -65,7 +65,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           lineHeight: '1.7',
           color: '#4a5568'
         }}>
-          "{message}"
+          &quot;{message}&quot;
         </p>
         <p style={{
           margin: '16px 0 0',

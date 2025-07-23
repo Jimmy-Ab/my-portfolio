@@ -57,7 +57,7 @@ const Home = () => {
               className="text-5xl md:text-6xl font-bold mt-4 mb-8 leading-tight"
               variants={itemVariants}
             >
-              Hey I'm <br />
+              Hey I&rsquo;m <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#4f46e5]">
                 Dalasa Aboma
               </span>
