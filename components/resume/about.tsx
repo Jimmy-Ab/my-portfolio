@@ -15,11 +15,11 @@ const about = {
     },
     {
       fieldName: "Experience",
-      fieldValue: "5+ years",
+      fieldValue: "6+ years",
     },
     {
-      fieldName: "Skype",
-      fieldValue: "dalasa.live.skype.com",
+      fieldName: "LinkedIn",
+      fieldValue: "https://www.linkedin.com/in/dalasa-aboma-415344111",
     },
     {
       fieldName: "Nationality",

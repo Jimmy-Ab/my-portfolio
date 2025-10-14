@@ -11,9 +11,9 @@ import {
 const socials = [
   { icon: <FaGithub />, path: "https://github.com/Jimmy-Ab?tab=repositories" },
   { icon: <FaLinkedinIn />, path: "https://www.linkedin.com/in/dalasa-aboma-415344111/" },
-  { icon: <FaTwitter />, path: "https://x.com/DalasaAboma" },
-  { icon: <FaInstagram />, path: "https://www.instagram.com/jimmy___ab/" },
-  { icon: <FaTelegram />, path: "https://t.me/jimmy1978" },
+  { icon: <FaTwitter />, path: "https://x.com/JxmmiAb" },
+  { icon: <FaInstagram />, path: "https://www.instagram.com/jxmmiab/" },
+  { icon: <FaTelegram />, path: "https://t.me/Jxmmiab" },
 ];
 const Socials = () => {
   return (
