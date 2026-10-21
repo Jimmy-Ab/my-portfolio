@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -12,92 +12,187 @@ import WorkSliderBtns from "@/components/work/work-slide-btns";
 const projects = [
   {
     num: "01",
-    category: "Frontend",
+    category: "Industrial AI",
+    title: "Shopfloor.io / ShopfloorGPT",
+    description:
+      "Enterprise industrial AI platform integrating factory machine telemetry with conversational RAG search over massive machinery documentation catalogs.",
+    stack: [
+      { name: "Angular 18" },
+      { name: "NestJS" },
+      { name: "Weaviate RAG" },
+      { name: "PostgreSQL" },
+      { name: "Azure OpenAI" },
+      { name: "Keycloak" },
+      { name: "AKS" },
+    ],
+    image: "/assets/work/shopfloor-ui.jpg",
+    live: "https://shopfloor.io",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "AI Extraction",
+    title: "MunschGPT Specification Extraction",
+    description:
+      "AI-assisted engineering platform that parses complex technical documents to extract structured engineering parameters (flow rates, pressures, ATEX certifications) in real time via SSE streaming.",
+    stack: [
+      { name: "Angular 18" },
+      { name: "NestJS" },
+      { name: "Weaviate" },
+      { name: "PostgreSQL" },
+      { name: "SSE" },
+      { name: "Nx Monorepo" },
+    ],
+    image: "/assets/work/munsch-ui.jpg",
+    live: "",
+    github: "",
+  },
+  {
+    num: "03",
+    category: "Industrial IoT",
+    title: "NORD DRIVESYSTEMS Telemetry",
+    description:
+      "Enterprise condition monitoring platform aggregating high-frequency industrial drive telemetry (vibration, heat, torque, motor speed) with embedded Grafana dashboards for preventive maintenance.",
+    stack: [
+      { name: "Angular 20" },
+      { name: "NestJS 11" },
+      { name: "RxJS" },
+      { name: "Grafana" },
+      { name: "Keycloak" },
+      { name: "Nx" },
+    ],
+    image: "/assets/work/nord-ui.jpg",
+    live: "",
+    github: "",
+  },
+  {
+    num: "04",
+    category: "Industrial Portal",
+    title: "ROVEMA / myROVEMA Customer Portal",
+    description:
+      "Machinery customer portal serving 1,000+ packaging machine operators across international manufacturing facilities with multi-tenant asset management and ticketing.",
+    stack: [
+      { name: "Angular 18" },
+      { name: "NestJS" },
+      { name: "PostgreSQL" },
+      { name: "Keycloak" },
+      { name: "Docker" },
+    ],
+    image: "/assets/work/rovema-ui.jpg",
+    live: "",
+    github: "",
+  },
+  {
+    num: "05",
+    category: "Productivity & Tools",
+    title: "Slack Management System",
+    description:
+      "Full-stack team productivity platform enabling workspaces to link Slack channels, automate daily standup progress reporting, and enforce 4-tier RBAC authentication.",
+    stack: [
+      { name: "NestJS" },
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Prisma" },
+      { name: "PostgreSQL" },
+      { name: "Docker" },
+    ],
+    image: "/assets/work/slack-ui.jpg",
+    live: "",
+    github: "https://github.com/Jimmy-Ab/slack-management",
+  },
+  {
+    num: "06",
+    category: "Supply Chain",
     title: "Adey Coffee Supply Chain",
     description:
-      "A system that optimizes the procurement process in a cloud based environment for all stakeholders.",
+      "A cloud-based agricultural commodity platform tracking supply chain movements, lot origins, quality inspection workflows, and exporter logistics.",
     stack: [
       { name: "Next.js" },
-      { name: "Typescript" },
-      { name: "Redux Toolkit" },
-      { name: "MUI" },
-      { name: "Ant Design" },
+      { name: "React" },
+      { name: "Node.js" },
+      { name: "PostgreSQL" },
+      { name: "Tailwind CSS" },
     ],
     image: "/assets/work/adey-supply.png",
     live: "",
     github: "",
   },
   {
-    num: "02",
-    category: "Fullstack",
+    num: "07",
+    category: "Document Automation",
     title: "Adey Generator",
     description:
-      "Generates Privacy Policies, Imprints, and Terms & Conditions by answering a few questions, ensuring compliance and ease.",
+      "Automated document and template generation system for enterprise workflows, contract dispatching, and dynamic report compilation.",
     stack: [
-      { name: ".Net core" },
+      { name: ".NET Core" },
       { name: "C#" },
       { name: "Blazor" },
-      { name: "MUI" },
+      { name: "REST APIs" },
     ],
     image: "/assets/work/adey-generator.png",
     live: "",
     github: "",
   },
   {
-    num: "03",
-    category: "Fullstack",
+    num: "08",
+    category: "Warehouse Logistics",
     title: "CERVIS WTMS and ERP",
     description:
-      "A web-based warehouse management system developed for a company called Cervis in Germany.",
+      "Web-based warehouse management and ERP system developed for Cervis GmbH in Germany, managing real-time stock inventories and dispatching.",
     stack: [
-      { name: ".Net core" },
+      { name: ".NET Core" },
       { name: "C#" },
       { name: "Blazor" },
-      { name: "MUI" },
+      { name: "REST APIs" },
     ],
     image: "/assets/work/cervis-wtms.png",
     live: "",
     github: "",
   },
   {
-    num: "04",
-    category: "Fullstack",
+    num: "09",
+    category: "Cybersecurity Agent",
     title: "Better MTD Bitdefender Integration",
     description:
-      "Windows service agent that collects incident data from a third party app(bitdefender) and reports to the MTD console.",
-    stack: [{ name: ".Net Core" }, { name: "WPF" }, { name: "C#" }],
+      "High-reliability C#/.NET Windows service agent running on endpoints to capture Bitdefender threat telemetry and relay alerts to central backend consoles.",
+    stack: [
+      { name: "C#" },
+      { name: ".NET Core" },
+      { name: "Windows Services" },
+      { name: "Bitdefender SDK" },
+    ],
     image: "/assets/work/better-azure.png",
     live: "",
     github: "",
   },
   {
-    num: "05",
-    category: "Frontend",
+    num: "10",
+    category: "Security Analytics",
     title: "Better MTD Sentinel Integration",
     description:
-      "Provides intelligent security analytics and threat intelligence, offering a solution for alert detection, visibility, and response.",
+      "Direct enterprise bridge channeling mobile security telemetry into Microsoft Sentinel and SIEM/SOC platforms with zero event loss.",
     stack: [
-      { name: ".Net Core" },
-      { name: "Azure KQL" },
-      { name: "Javascript" },
+      { name: ".NET Core" },
+      { name: "Azure Sentinel" },
+      { name: "REST APIs" },
+      { name: "CEF/JSON" },
     ],
     image: "/assets/work/better-home.png",
     live: "",
     github: "",
   },
   {
-    num: "06",
-    category: "Fullstack",
-    title: "Better MTD Console(Web)",
+    num: "11",
+    category: "Security Management",
+    title: "Better MTD Console (Web)",
     description:
-      "Provides intelligent security analytics and threat intelligence, offering a solution for alert detection, visibility, and response.",
+      "Centralized mobile threat visibility console offering incident response workflows, automated quarantine triggers, and fleet security monitoring.",
     stack: [
-      { name: ".Net Core" },
+      { name: ".NET Core" },
       { name: "Angular" },
-      { name: "Javascript" },
-      { name: "CSS" },
-      { name: "MUI" },
-      { name: "C#" },
+      { name: "TypeScript" },
+      { name: "MongoDB" },
+      { name: "MySQL" },
     ],
     image: "/assets/work/better-mtd.png",
     live: "https://www.better.mobi/product#mtd",
@@ -139,8 +234,16 @@ const Work = () => {
             Featured <span className="text-accent">Projects</span>
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            A selection of my professional work and contributions
+            A selection of production-grade systems across Enterprise AI, Industrial IoT, and Full-Stack Engineering
           </p>
+          <div className="mt-4">
+            <Link
+              href="/deck"
+              className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-mono"
+            >
+              <span>Explore all 21 slides in the interactive Executive Deck ↗</span>
+            </Link>
+          </div>
         </motion.div>
 
         <div className="flex flex-col xl:flex-row gap-12">
@@ -224,6 +327,8 @@ const Work = () => {
                       src={project.image}
                       alt={project.title}
                       fill
+                      unoptimized
+                      priority={index === 0}
                       className="object-cover"
                     />
                     <div className="absolute bottom-0 left-0 p-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">

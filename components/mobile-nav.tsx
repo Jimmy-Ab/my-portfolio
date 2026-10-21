@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
@@ -21,6 +21,10 @@ const links = [
   {
     name: "Work",
     path: "/work",
+  },
+  {
+    name: "Deck",
+    path: "/deck",
   },
   {
     name: "Contact",
