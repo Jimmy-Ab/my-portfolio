@@ -69,7 +69,7 @@ const Home = () => {
               variants={itemVariants}
             >
               Full-Stack &amp; Enterprise Cloud Specialist engineering high-throughput web applications, 
-              industrial AI &amp; RAG architectures, and distributed microservices with Angular, NestJS, React, .NET Core, and Kubernetes.
+              industrial AI &amp; RAG architectures, and distributed microservices with Angular, NestJS, React, .NET, and Kubernetes.
             </motion.p>
 
             {/* Action Buttons */}

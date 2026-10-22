@@ -124,7 +124,7 @@ const projects = [
     description:
       "Automated document and template generation system for enterprise workflows, contract dispatching, and dynamic report compilation.",
     stack: [
-      { name: ".NET Core" },
+      { name: ".NET" },
       { name: "C#" },
       { name: "Blazor" },
       { name: "REST APIs" },
@@ -140,7 +140,7 @@ const projects = [
     description:
       "Web-based warehouse management and ERP system developed for Cervis GmbH in Germany, managing real-time stock inventories and dispatching.",
     stack: [
-      { name: ".NET Core" },
+      { name: ".NET" },
       { name: "C#" },
       { name: "Blazor" },
       { name: "REST APIs" },
@@ -157,7 +157,7 @@ const projects = [
       "High-reliability C#/.NET Windows service agent running on endpoints to capture Bitdefender threat telemetry and relay alerts to central backend consoles.",
     stack: [
       { name: "C#" },
-      { name: ".NET Core" },
+      { name: ".NET" },
       { name: "Windows Services" },
       { name: "Bitdefender SDK" },
     ],
@@ -172,7 +172,7 @@ const projects = [
     description:
       "Direct enterprise bridge channeling mobile security telemetry into Microsoft Sentinel and SIEM/SOC platforms with zero event loss.",
     stack: [
-      { name: ".NET Core" },
+      { name: ".NET" },
       { name: "Azure Sentinel" },
       { name: "REST APIs" },
       { name: "CEF/JSON" },
@@ -188,7 +188,7 @@ const projects = [
     description:
       "Centralized mobile threat visibility console offering incident response workflows, automated quarantine triggers, and fleet security monitoring.",
     stack: [
-      { name: ".NET Core" },
+      { name: ".NET" },
       { name: "Angular" },
       { name: "TypeScript" },
       { name: "MongoDB" },

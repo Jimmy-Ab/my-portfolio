@@ -22,7 +22,7 @@ const services = [
   {
     num: "03",
     title: "High-Throughput Microservices",
-    description: "Distributed, event-driven backend ecosystems leveraging NestJS, .NET Core, PostgreSQL, Redis caching, Docker, and Kubernetes (AKS) with Keycloak SSO and robust CI/CD.",
+    description: "Distributed, event-driven backend ecosystems leveraging NestJS, .NET, PostgreSQL, Redis caching, Docker, and Kubernetes (AKS) with Keycloak SSO and robust CI/CD.",
     href: "/work",
     active: true
   },

@@ -58,7 +58,7 @@ const skills = {
     },
     {
       icon: <SiDotnet />,
-      name: ".NET Core / C#",
+      name: ".NET / C#",
     },
     {
       icon: <SiPostgresql />,
