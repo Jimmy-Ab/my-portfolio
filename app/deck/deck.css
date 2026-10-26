@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
     /* ==========================================================================
        CSS VARIABLES & ULTRA-CLEAN DESIGN SYSTEM
        ========================================================================== */
@@ -331,6 +331,18 @@
     /* ==========================================================================
        CONTAINER LAYOUT MODES & SLIDE CANVASES
        ========================================================================== */
+    /* Root wrapper (deck vs scroll mode) */
+    .portfolio-deck-root {
+      min-height: 100vh;
+    }
+
+    /* Deck mode: lock body scroll, make root fullscreen */
+    .portfolio-deck-root.deck-mode {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+    }
+
     .portfolio-wrapper {
       padding-top: 86px;
       padding-bottom: 60px;
@@ -338,6 +350,35 @@
       flex-direction: column;
       align-items: center;
       gap: 36px;
+    }
+
+    /* Deck mode: center a single slide in the viewport */
+    .portfolio-deck-root.deck-mode .portfolio-wrapper {
+      padding-top: 0;
+      padding-bottom: 0;
+      gap: 0;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Slide entering / active in deck mode */
+    .portfolio-deck-root.deck-mode .slide-page {
+      animation: deckSlideIn 0.28s var(--ease-smooth) both;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+
+    @keyframes deckSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* Standard Slide Canvas (16:9 Aspect Ratio) */

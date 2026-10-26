@@ -1,6 +1,6 @@
-﻿"use client";
+"use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import "./deck.css";
 import { SLIDES_HTML } from "./slides-content";
@@ -13,7 +13,7 @@ export default function DeckPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Jump to specific slide
-  const jumpToSlide = (slideId: string) => {
+  const jumpToSlide = useCallback((slideId: string) => {
     const target = document.getElementById(slideId);
     if (!target) return;
     if (currentMode === "deck") {
@@ -31,25 +31,16 @@ export default function DeckPage() {
         behavior: "smooth",
       });
     }
-  };
+  }, [currentMode]);
 
-  // Deck view toggle and display update
+  // Deck view: control body overflow
   useEffect(() => {
-    const slides = Array.from(document.querySelectorAll<HTMLElement>(".slide-page"));
     if (currentMode === "deck") {
-      slides.forEach((slide, idx) => {
-        if (idx === currentSlide) {
-          slide.style.display = "flex";
-        } else {
-          slide.style.display = "none";
-        }
-      });
+      document.body.style.overflow = "hidden";
     } else {
-      slides.forEach((slide) => {
-        slide.style.display = "flex";
-      });
+      document.body.style.overflow = "";
     }
-  }, [currentMode, currentSlide]);
+  }, [currentMode]);
 
   // Update progress bar
   useEffect(() => {
@@ -104,20 +95,23 @@ export default function DeckPage() {
 
     container.addEventListener("click", handleClick);
     return () => container.removeEventListener("click", handleClick);
-  }, [currentMode]);
+  }, [jumpToSlide]);
+
+  // Cleanup: restore body overflow on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   // Ensure all slides display when printing to PDF
   useEffect(() => {
     const handleBeforePrint = () => {
-      document.querySelectorAll<HTMLElement>(".slide-page").forEach((el) => {
-        el.style.display = "flex";
-      });
+      document.body.style.overflow = "";
     };
     const handleAfterPrint = () => {
       if (currentMode === "deck") {
-        document.querySelectorAll<HTMLElement>(".slide-page").forEach((el, idx) => {
-          el.style.display = idx === currentSlide ? "flex" : "none";
-        });
+        document.body.style.overflow = "hidden";
       }
     };
     window.addEventListener("beforeprint", handleBeforePrint);
@@ -128,8 +122,34 @@ export default function DeckPage() {
     };
   }, [currentMode, currentSlide]);
 
+  // CSS that controls slide visibility in deck mode via nth-child.
+  // This is synchronous with React renders — no DOM timing race conditions.
+  const deckModeStyles = currentMode === "deck"
+    ? `
+      .portfolio-wrapper .slide-page {
+        display: none !important;
+      }
+      .portfolio-wrapper .slide-page:nth-child(${currentSlide + 1}) {
+        display: flex !important;
+        animation: deckSlideIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      @media print {
+        .portfolio-wrapper .slide-page {
+          display: flex !important;
+        }
+      }
+    `
+    : `
+      .portfolio-wrapper .slide-page {
+        display: flex !important;
+      }
+    `;
+
   return (
-    <div className="portfolio-deck-root">
+    <div className={`portfolio-deck-root${currentMode === "deck" ? " deck-mode" : ""}`}>
+      {/* Dynamic slide visibility style — synchronous with render */}
+      <style dangerouslySetInnerHTML={{ __html: deckModeStyles }} />
+
       {/* Interactive Top Frosted Glass Header */}
       <header className="app-header">
         <div className="flex items-center gap-4">
@@ -193,7 +213,7 @@ export default function DeckPage() {
               className={`toggle-btn ${currentMode === "deck" ? "active" : ""}`}
               onClick={() => {
                 setCurrentMode("deck");
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                setCurrentSlide(0);
               }}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
