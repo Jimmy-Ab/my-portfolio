@@ -92,7 +92,7 @@ const Contact = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="py-12 xl:py-16"
+      className="py-8 xl:py-12 flex-1"
     >
       <div className="container mx-auto px-6">
         <div className="flex flex-col xl:flex-row gap-12">

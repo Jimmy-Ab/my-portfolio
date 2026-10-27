@@ -45,7 +45,7 @@
       scroll-behavior: smooth;
     }
 
-    body {
+    .portfolio-deck-root {
       font-family: var(--font-body);
       font-weight: 400;
       background-color: var(--bg-dark-base);

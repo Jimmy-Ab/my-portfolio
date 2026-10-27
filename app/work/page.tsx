@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -213,10 +213,10 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="relative py-16 xl:py-24 overflow-hidden"
+      className="relative py-6 xl:py-10 overflow-hidden flex-1"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e]"></div>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl animate-float"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-[#4f46e5]/10 blur-3xl animate-float-delay"></div>
@@ -224,7 +224,7 @@ const Work = () => {
 
       <div className="container mx-auto px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-6 xl:mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -316,12 +316,12 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] rounded-2xl overflow-hidden"
+              className="xl:h-[420px] rounded-2xl overflow-hidden"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative h-[400px] xl:h-[500px] group">
+                  <div className="relative h-[320px] xl:h-[400px] group">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <Image
                       src={project.image}

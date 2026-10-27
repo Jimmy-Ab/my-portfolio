@@ -57,10 +57,10 @@ const Services = () => {
   };
 
   return (
-    <section className="relative py-12 xl:py-16">
+    <section className="relative py-6 xl:py-10 overflow-hidden flex-1">
       {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] transform -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e]"></div>
         <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl animate-float"></div>
         <div className="absolute bottom-1/3 left-1/4 w-80 h-80 rounded-full bg-[#4f46e5]/10 blur-3xl animate-float-delay"></div>
       </div>
@@ -68,7 +68,7 @@ const Services = () => {
       <div className="container mx-auto px-6">
         {/* Section header */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-6 xl:mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -84,7 +84,7 @@ const Services = () => {
 
         {/* Services grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-5"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -131,7 +131,7 @@ const Services = () => {
 
         {/* Action banner */}
         <motion.div 
-          className="text-center mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="text-center mt-8 p-5 rounded-2xl bg-white/5 border border-white/10 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}

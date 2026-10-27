@@ -33,13 +33,13 @@ const Home = () => {
 
   return (
     <motion.section 
-      className="min-h-screen text-white"
+      className="flex-1 flex flex-col justify-start text-white min-h-0 pt-16 xl:pt-28"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-6 py-12 xl:py-16 h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between gap-12 xl:gap-20">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col xl:flex-row items-center justify-between gap-8 xl:gap-16 w-full">
           {/* Text Content */}
           <motion.div 
             className="text-center xl:text-left order-2 xl:order-none max-w-2xl"
@@ -55,7 +55,7 @@ const Home = () => {
             </motion.span>
 
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4 mb-6 leading-tight"
+              className="text-4xl sm:text-5xl xl:text-6xl font-bold mt-2 sm:mt-3 mb-2 xl:mb-4 leading-tight"
               variants={itemVariants}
             >
               Hey I&rsquo;m <br />
@@ -65,7 +65,7 @@ const Home = () => {
             </motion.h1>
 
             <motion.p 
-              className="text-base sm:text-lg text-white/70 mb-8 leading-relaxed"
+              className="text-base sm:text-lg text-white/70 mb-3 xl:mb-5 leading-relaxed max-w-xl"
               variants={itemVariants}
             >
               Full-Stack &amp; Enterprise Cloud Specialist engineering high-throughput web applications, 
@@ -74,7 +74,7 @@ const Home = () => {
 
             {/* Action Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-4 mb-8"
+              className="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-4 mb-3 xl:mb-5"
               variants={itemVariants}
             >
               <a
@@ -119,7 +119,7 @@ const Home = () => {
 
           {/* Photo */}
           <motion.div 
-            className="order-1 xl:order-none mb-8 xl:mb-0 relative"
+            className="order-1 xl:order-none mb-4 xl:mb-0 relative"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -135,6 +135,7 @@ const Home = () => {
 
       {/* Stats with floating animation */}
       <motion.div
+        className="mt-24 xl:mt-36 pb-4 shrink-0"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.6 }}

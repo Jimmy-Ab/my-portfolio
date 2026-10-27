@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    @apply overflow-x-hidden h-full;
+  }
+
+  html {
+    overflow-y: auto;
+  }
+
   body {
-    @apply bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] font-primary text-white leading-loose;
+    @apply bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] font-primary text-white leading-normal overflow-x-hidden;
   }
 
   .h1 {

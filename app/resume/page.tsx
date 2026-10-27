@@ -33,10 +33,10 @@ const Resume = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="relative py-12 xl:py-16"
+      className="relative py-6 xl:py-10 overflow-hidden flex-1"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e]"></div>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl animate-float"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-[#4f46e5]/10 blur-3xl animate-float-delay"></div>
@@ -44,7 +44,7 @@ const Resume = () => {
 
       <div className="container mx-auto px-6">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-6 xl:mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -87,7 +87,7 @@ const Resume = () => {
             </TabsList>
           </motion.div>
 
-          <div className="flex-1 min-h-[60vh]">
+          <div className="flex-1 min-h-[40vh]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

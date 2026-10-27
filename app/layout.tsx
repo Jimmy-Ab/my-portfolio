@@ -26,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${jetBrains_Mono.variable}`}>
+    <html lang="en" className="h-full">
+      <body className={`${jetBrains_Mono.variable} h-full flex flex-col`}>
       {/* <CustomCursor /> */}
         <Header />
         <StairTransition />

@@ -35,7 +35,7 @@ const Stats = () => {
   ];
 
   return (
-    <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
+    <section className="pt-1 pb-3 xl:pt-0 xl:pb-0">
       <div className="container mx-auto">
         <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((stat, index) => {
@@ -45,11 +45,7 @@ const Stats = () => {
                 className="flex-1 flex gap-4 items-center justify-center xl:justify-start min-w-[200px]"
               >
                 <div className="flex items-center text-4xl xl:text-6xl font-extrabold text-white">
-                  <CountUp
-                    end={stat.num}
-                    duration={3}
-                    delay={0.5}
-                  />
+                  <CountUp end={stat.num} duration={3} delay={0.5} />
                   <span className="text-accent">{stat.suffix}</span>
                 </div>
                 <p

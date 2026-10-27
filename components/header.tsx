@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    <header className="py-8 xl:py-10 text-white">
+    <header className="py-2.5 xl:py-3.5 text-white shrink-0">
       <div className="container mx-auto flex justify-between items-center px-6">
         <Link href="/">
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
